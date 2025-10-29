@@ -9,12 +9,49 @@ print("-------------------------")
 print()
 
 #List of dice choices
-dice_options = ('d%', 'd4', 'd6', 'd8', 'd10', 'd12', 'd20')
+dice_options = {
+'d4':4,
+'d6':6,
+'d8':8,
+'d10':10,
+'d12':12,
+'d20':20,
+}
 
 while True:
 	#User Dice Selection
 	print("*** Dice Options ***")
-	print("D%\nD4\nD6\nD8\nD10\nD12\nD20")
+	print("D4\nD6\nD8\nD10\nD12\nD20")
+
+	#Line breaks for visual breakup
+	print()
+	print("-------------------------")
+	print()
+
+	dice_selection = input("Select a dice to roll: ").lower()
+
+	if dice_selection in dice_options:
+		print(f"Rolling {dice_selection.upper()}......")
+		print()
+		dice_roll = random.randint(1, dice_options[dice_selection])
+
+		print(f"Roll Result: {dice_roll}\n")
+		print("-------------------------")
+		print()
+	else:
+		print("That is not one of the dice options.")
+	
+	roll_again = input("Would you like to roll again [Y/n]: ").strip().lower() or "y"
+	if roll_again == "y":
+			print()
+	else:
+			print("Thanks for rolling the dice!")
+			break
+#Commented out for testing more dynamic scripting.
+"""while True:
+	#User Dice Selection
+	print("*** Dice Options ***")
+	print("D4\nD6\nD8\nD10\nD12\nD20")
 
 	#Line breaks for visual breakup
 	print()
@@ -77,12 +114,10 @@ while True:
 
                 print("-------------------------")
                 print()
-
-
-	roll_again = input ("Would you like to roll again [Y/n]: ") or "Y".lower()
-	if roll_again == "y":
-		print()
-
-	else:
-		print("Thanks for rolling the dice!")
-		break
+"""
+"""roll_again = input("Would you like to roll again [Y/n]: ").strip().lower() or "y"
+if roll_again == "y":
+			print()
+else:
+			print("Thanks for rolling the dice!")
+	"""
