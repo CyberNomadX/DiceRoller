@@ -47,6 +47,7 @@ while True:
 	else:
 			print("Thanks for rolling the dice!")
 			break
+			
 #Commented out for testing more dynamic scripting.
 """while True:
 	#User Dice Selection
